@@ -4,7 +4,6 @@ import 'package:spacex_missions/features/spacex_missions/domain/bloc/bloc.dart';
 import 'package:spacex_missions/features/spacex_missions/presentation/widgets/missions_list_view.dart';
 import 'package:spacex_missions/features/spacex_missions/presentation/widgets/progress_indicator_component.dart';
 import 'package:spacex_missions/features/spacex_missions/presentation/widgets/search_bar.dart';
-import 'package:spacex_missions/logger.dart';
 
 class MissionsPage extends StatelessWidget {
   const MissionsPage({Key? key}) : super(key: key);
@@ -30,7 +29,6 @@ class MissionsPage extends StatelessWidget {
   Widget _buildBody() {
     return BlocBuilder<MissionsBloc, MissionsState>(
       builder: (context, state) {
-        Logger.d('state: $state');
         if (state is LoadingState) {
           return const ProgressIndicatorComponent();
         }

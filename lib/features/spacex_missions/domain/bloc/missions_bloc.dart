@@ -16,7 +16,7 @@ class MissionsBloc extends Bloc<MissionsEvent, MissionsState> {
         (event, emit) => _findMissionsByName(event.name, emit),
         transformer: (events, transitionFn) {
       return events
-          .debounceTime(const Duration(seconds: 1))
+          .debounceTime(const Duration(seconds: 2))
           .switchMap((transitionFn));
     });
   }

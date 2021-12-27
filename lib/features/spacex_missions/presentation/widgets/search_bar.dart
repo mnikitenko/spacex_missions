@@ -41,10 +41,10 @@ class _SearchBarState extends State<SearchBar> {
         ),
         onChanged: (String input) {
           if (_isValidInput(input)) {
+            _search(context, input);
             if (hasError) {
               setState(() => hasError = false);
             }
-            _search(context, input);
           }
           if (!_isValidInput(input) && !hasError) {
             setState(() => hasError = true);

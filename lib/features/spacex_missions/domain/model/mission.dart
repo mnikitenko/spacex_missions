@@ -6,4 +6,9 @@ class Mission {
     required this.name,
     required this.details,
   });
+
+  @override
+  String toString() {
+    return 'Mission{name: $name, details: $details}';
+  }
 }
